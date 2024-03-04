@@ -5,7 +5,7 @@ const WeatherCard = ({ weather, temp, setInput, input, map, setMap }) => {
   const [scale, setScale] = useState(true);
   return (
     <article className="weather">
-      <h1 className="weather__title">Weater App</h1>
+      <h1 className="weather__title">Weather App</h1>
       <h2 className="weather__country">
         {weather?.name}, {weather?.sys.country}
       </h2>
