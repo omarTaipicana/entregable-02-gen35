@@ -1,0 +1,41 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../fondo02.gif");
+  background-size: cover;
+  background-position: center;
+  gap: 0.5em;
+}
+.app__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.isLoading {
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.error__card {
+  background-color: rgba(255, 0, 0, 0.539);
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .app {
+    flex-direction: column;
+    padding: 0 0.5em;
+  }
+}
