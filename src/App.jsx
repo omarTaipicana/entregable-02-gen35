@@ -55,7 +55,7 @@ function App() {
   return (
     <div className="app">
       <article className="app__card">
-        {handleError ? <></> : <ErrorCard />}
+        {!handleError && <ErrorCard />}
         {isLoading ? (
           <IsLoading />
         ) : (
@@ -69,9 +69,7 @@ function App() {
           />
         )}
 
-        {input ? (
-          <></>
-        ) : (
+        {!input && (
           <InputCountry
             setCoordsMap={setCoordsMap}
             setWeather={setWeather}
@@ -81,16 +79,14 @@ function App() {
         )}
       </article>
 
-      {map ? (
-        <></>
-      ) : (
+      {!map &&
         <Map
           coords={coords}
           setCoords={setCoords}
           coordsMap={coordsMap}
           setCoordsMap={setCoordsMap}
         />
-      )}
+      }
     </div>
   );
 }
