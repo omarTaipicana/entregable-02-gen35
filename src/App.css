@@ -24,13 +24,23 @@
 
   
 }
+.map__card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 0.9em;
+}
 
 .error__card {
-  background-color: rgba(255, 0, 0, 0.539);
+  background-color: rgba(255, 0, 0, 0.6);
   padding: 0.5em 1em;
   border-radius: 1em;
-  font-size: 1.2em;
-  font-weight: 800;
+  font-size: 1.4em;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: rgba(203, 245, 179, 0.941);
+  text-shadow: 3px 3px 5px black;
+  margin-top: 0.5em;
 }
 
 @media (max-width: 600px) {

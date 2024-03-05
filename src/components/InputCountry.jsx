@@ -8,7 +8,7 @@ const InputCountry = ({ setWeather, setTemp, weather, setCoordsMap }) => {
 
   useEffect(() => {
     const APIKEY = "5b0660ff99ab1982109177a3b0d41476";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName?cityName:"latacunga"}&appid=${APIKEY}`;
     axios
       .get(url)
       .then((res) => {
@@ -38,7 +38,7 @@ const InputCountry = ({ setWeather, setTemp, weather, setCoordsMap }) => {
   return (
     <form className="form__card" onSubmit={handleSubmit}>
       <label className="form__label" htmlFor="city">
-        Country:{" "}
+        City:
       </label>
       <input
         placeholder="Ingrese el nombre de la ciudad"
