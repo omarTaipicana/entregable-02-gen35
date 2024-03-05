@@ -3,10 +3,11 @@ import axios from "axios";
 import { useRef } from "react";
 import "./styles/Input.css";
 
-const InputCountry = ({ setWeather, setTemp, weather, setCoordsMap }) => {
+const InputCountry = ({ setWeather, setTemp, setIsLoading, setCoordsMap }) => {
   const [cityName, setCityName] = useState("");
 
   useEffect(() => {
+    setIsLoading(true)
     const APIKEY = "5b0660ff99ab1982109177a3b0d41476";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName?cityName:"latacunga"}&appid=${APIKEY}`;
     axios
@@ -24,7 +25,8 @@ const InputCountry = ({ setWeather, setTemp, weather, setCoordsMap }) => {
           lon: res.data?.coord.lon,
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => setIsLoading(false));
   }, [cityName]);
 
   const inputSearch = useRef();

@@ -34,6 +34,7 @@ function App() {
 
   useEffect(() => {
     if (coords) {
+      setIsLoading(true)
       const APIKEY = "5b0660ff99ab1982109177a3b0d41476";
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${APIKEY}`;
       axios
@@ -75,18 +76,19 @@ function App() {
             setWeather={setWeather}
             weather={weather}
             setTemp={setTemp}
+            setIsLoading={setIsLoading}
           />
         )}
       </article>
 
-      {!map &&
+      {!map && (
         <Map
           coords={coords}
           setCoords={setCoords}
           coordsMap={coordsMap}
           setCoordsMap={setCoordsMap}
         />
-      }
+      )}
     </div>
   );
 }
